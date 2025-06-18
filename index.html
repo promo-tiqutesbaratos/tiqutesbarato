@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 FastColombiaTravel - Viaja al Futuro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top left, #0fffc1, #0e0f14);
+      color: #ffffff;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 0, 204, 0.5);
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #e0e0e0;
+    }
+
+    .section {
+      background: #1a1a2e;
+      margin: 40px auto;
+      max-width: 960px;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+    }
+
+    .section h2 {
+      font-size: 32px;
+      color: #ff00cc;
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .offer {
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      color: #0e0f14;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 20px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .offer:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #ff00cc;
+      text-align: center;
+      padding: 20px;
+      color: #0e0f14;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    #captchaOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    .captcha-box {
+      background: #121423;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 25px #00f2fe;
+    }
+
+    .captcha-box h1 {
+      font-size: 22px;
+      color: #00f2fe;
+      margin-bottom: 20px;
+    }
+
+    .captchat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0e0f14;
+      border: 2px solid #00f2fe;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      gap: 12px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .captchat:hover {
+      background: #00f2fe;
+      color: #0e0f14;
+    }
+
+    .checkbox-style {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #00f2fe;
+      border-radius: 4px;
+    }
+
+    .checkbox-style.checked {
+      background: #00f2fe;
+      position: relative;
+    }
+
+    .checkbox-style.checked::after {
+      content: '✓';
+      color: #0e0f14;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+    }
+
+    .loader {
+      margin: 20px auto;
+      width: 30px;
+      height: 30px;
+      border: 4px solid transparent;
+      border-top: 4px solid #00f2fe;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #continueBtn {
+      background: #00f2fe;
+      color: #0e0f14;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      display: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="captchaOverlay">
+  <div class="captcha-box">
+    <h1>Verificación Humana</h1>
+    <div class="captchat" id="captchaBox">
+      <div class="checkbox-style" id="check"></div>
+      <span>No soy un robot</span>
+    </div>
+    <div class="loader" id="loader"></div>
+    <button id="continueBtn">¡Vamos!</button>
+  </div>
+</div>
+
+<header>
+  FastColombiaTravel - Tu viaje comienza aquí 🚀
+  <p>Ofertas únicas y futuristas para todos los destinos</p>
+</header>
+
+<section class="section">
+  <h2>🔥 Destinos de Impacto</h2>
+  <div class="offer">Bogotá 🚁 Medellín - Desde $75.000 COP</div>
+  <div class="offer">Cali ✈ Cartagena - Desde $105.000 COP</div>
+  <div class="offer">Bucaramanga 🌴 Santa Marta - Desde $90.000 COP</div>
+</section>
+
+<section class="section">
+  <h2>🧬 ¿Quiénes Somos?</h2>
+  <p>Una compañía del futuro que conecta a los colombianos con el país y el mundo. Tecnología, confianza y pasión por viajar.</p>
+</section>
+
+<section class="section">
+  <h2>📜 Términos y Privacidad</h2>
+  <p>Respetamos tu privacidad. No compartimos tu información sin tu autorización y usamos cookies para mejorar tu experiencia. Más en <a href="#" style="color:#00f2fe">política de privacidad</a>.</p>
+</section>
+
+<footer>
+  &copy; 2025 FastColombiaTravel - Todos los derechos reservados
+</footer>
+
+<script>
+  const check = document.getElementById('check');
+  const loader = document.getElementById('loader');
+  const continueBtn = document.getElementById('continueBtn');
+  const captchaBox = document.getElementById('captchaBox');
+
+  captchaBox.addEventListener('click', () => {
+    if (!check.classList.contains('checked')) {
+      check.classList.add('checked');
+      loader.style.display = 'block';
+      continueBtn.style.display = 'none';
+      setTimeout(() => {
+        loader.style.display = 'none';
+        continueBtn.style.display = 'inline-block';
+      }, 2000);
+    }
+  });
+
+  continueBtn.addEventListener('click', () => {
+    document.getElementById('captchaOverlay').style.display = 'none';
+    window.location.href = "https://promo-tiqutesbaratos.github.io/tiquetesbaratos/promo.html";
+  });
+</script>
+
+</body>
+</html>
