@@ -1,236 +1,206 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌟 FastColombiaTravel - Viaja al Futuro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rubik:wght@500;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viaja por Colombia con tarifas increíbles. Encuentra promociones de vuelos con las mejores aerolíneas.">
+  <title>Ofertas de Vuelos Colombia ✈️</title>
   <style>
     body {
-      font-family: 'Rubik', sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top left, #0fffc1, #0e0f14);
-      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #2c2c2c;
     }
 
     header {
-      background: linear-gradient(90deg, #ff00cc, #3333ff);
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 40px;
-      font-weight: 700;
-      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff5e62, #ff9966);
       color: white;
-      box-shadow: 0 4px 15px rgba(255, 0, 204, 0.5);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
     header p {
-      font-size: 18px;
-      margin-top: 10px;
-      color: #e0e0e0;
+      font-size: 1.1rem;
     }
 
-    .section {
-      background: #1a1a2e;
-      margin: 40px auto;
-      max-width: 960px;
-      border-radius: 15px;
-      padding: 40px 30px;
-      box-shadow: 0 0 25px rgba(255, 0, 204, 0.3);
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
     }
 
-    .section h2 {
-      font-size: 32px;
-      color: #ff00cc;
-      text-align: center;
-      margin-bottom: 30px;
-      font-family: 'Orbitron', sans-serif;
+    h2 {
+      color: #ff5e62;
+      margin-top: 2rem;
     }
 
-    .offer {
-      background: linear-gradient(to right, #00f2fe, #4facfe);
-      color: #0e0f14;
-      margin: 15px 0;
-      padding: 20px;
+    .destinos {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #ddd;
       border-radius: 10px;
-      font-weight: bold;
-      font-size: 20px;
-      box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1rem;
     }
 
-    .offer:hover {
-      transform: scale(1.05);
+    .card h3 {
+      color: #ff5e62;
+      margin-bottom: 0.5rem;
     }
 
-    footer {
-      background: #ff00cc;
+    .card p {
+      margin: 0.2rem 0;
+    }
+
+    .cta {
       text-align: center;
-      padding: 20px;
-      color: #0e0f14;
-      font-weight: bold;
-      text-transform: uppercase;
+      margin: 3rem 0 1rem;
     }
 
-    #captchaOverlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-    }
-
-    .captcha-box {
-      background: #121423;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 25px #00f2fe;
-    }
-
-    .captcha-box h1 {
-      font-size: 22px;
-      color: #00f2fe;
-      margin-bottom: 20px;
-    }
-
-    .captchat {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0e0f14;
-      border: 2px solid #00f2fe;
-      padding: 12px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      gap: 12px;
+    .cta button {
+      background: #ff5e62;
       color: white;
-      font-weight: 500;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
 
-    .captchat:hover {
-      background: #00f2fe;
-      color: #0e0f14;
+    .cta button:hover {
+      background: #e14a4f;
     }
 
-    .checkbox-style {
-      width: 24px;
-      height: 24px;
-      border: 2px solid #00f2fe;
+    #reserva-form {
+      display: none;
+      background: #fff8f2;
+      padding: 1.5rem;
+      border: 1px solid #ffe0cc;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
       border-radius: 4px;
     }
 
-    .checkbox-style.checked {
-      background: #00f2fe;
-      position: relative;
-    }
-
-    .checkbox-style.checked::after {
-      content: '✓';
-      color: #0e0f14;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-weight: bold;
-    }
-
-    .loader {
-      margin: 20px auto;
-      width: 30px;
-      height: 30px;
-      border: 4px solid transparent;
-      border-top: 4px solid #00f2fe;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      display: none;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    #continueBtn {
-      background: #00f2fe;
-      color: #0e0f14;
-      padding: 12px 24px;
+    #reserva-form button {
+      background-color: #ff9966;
+      color: #fff;
       border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      display: none;
+      padding: 0.8rem 1.6rem;
+      margin-top: 1.2rem;
+      border-radius: 5px;
       cursor: pointer;
+    }
+
+    footer {
+      background-color: #2c2c2c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-<div id="captchaOverlay">
-  <div class="captcha-box">
-    <h1>Verificación Humana</h1>
-    <div class="captchat" id="captchaBox">
-      <div class="checkbox-style" id="check"></div>
-      <span>No soy un robot</span>
+  <header>
+    <h1>✈️ Promociones Exclusivas de Vuelos</h1>
+    <p>Viaja desde Colombia a los mejores destinos con precios irrepetibles</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🌍 Destinos Favoritos</h2>
+      <div class="destinos">
+        <div class="card">
+          <h3>Medellín → Cancún</h3>
+          <p><strong>$780.000 COP</strong> ida y vuelta</p>
+          <p>Incluye equipaje y comida abordo.</p>
+        </div>
+        <div class="card">
+          <h3>Bogotá → Buenos Aires</h3>
+          <p><strong>$1.290.000 COP</strong></p>
+          <p>Perfecto para una escapada romántica.</p>
+        </div>
+        <div class="card">
+          <h3>Cali → Punta Cana</h3>
+          <p><strong>$1.050.000 COP</strong></p>
+          <p>Disfruta de las playas y resorts todo incluido.</p>
+        </div>
+        <div class="card">
+          <h3>Bogotá → Lima</h3>
+          <p><strong>$890.000 COP</strong></p>
+          <p>Cultura, gastronomía y aventura.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <button onclick="mostrarFormulario()">Reservar mi vuelo</button>
+    </section>
+
+    <div id="reserva-form">
+      <h2>Formulario de Reserva</h2>
+      <form method="POST" action="procesar.php">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" name="correo" id="correo" required>
+
+        <label for="origen">Ciudad de salida</label>
+        <input type="text" name="origen" id="origen" required>
+
+        <label for="destino">Destino</label>
+        <select name="destino" id="destino" required>
+          <option value="">Selecciona destino</option>
+          <option value="Cancún">Cancún</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Punta Cana">Punta Cana</option>
+          <option value="Lima">Lima</option>
+        </select>
+
+        <button type="submit">Enviar reserva</button>
+      </form>
     </div>
-    <div class="loader" id="loader"></div>
-    <button id="continueBtn">¡Vamos!</button>
-  </div>
-</div>
+  </main>
 
-<header>
-  FastColombiaTravel - Tu viaje comienza aquí 🚀
-  <p>Ofertas únicas y futuristas para todos los destinos</p>
-</header>
+  <footer>
+    &copy; 2025 VuelaConEstilo.com – Todos los derechos reservados.
+  </footer>
 
-<section class="section">
-  <h2>🔥 Destinos de Impacto</h2>
-  <div class="offer">Bogotá 🚁 Medellín - Desde $75.000 COP</div>
-  <div class="offer">Cali ✈ Cartagena - Desde $105.000 COP</div>
-  <div class="offer">Bucaramanga 🌴 Santa Marta - Desde $90.000 COP</div>
-</section>
-
-<section class="section">
-  <h2>🧬 ¿Quiénes Somos?</h2>
-  <p>Una compañía del futuro que conecta a los colombianos con el país y el mundo. Tecnología, confianza y pasión por viajar.</p>
-</section>
-
-<section class="section">
-  <h2>📜 Términos y Privacidad</h2>
-  <p>Respetamos tu privacidad. No compartimos tu información sin tu autorización y usamos cookies para mejorar tu experiencia. Más en <a href="#" style="color:#00f2fe">política de privacidad</a>.</p>
-</section>
-
-<footer>
-  &copy; 2025 FastColombiaTravel - Todos los derechos reservados
-</footer>
-
-<script>
-  const check = document.getElementById('check');
-  const loader = document.getElementById('loader');
-  const continueBtn = document.getElementById('continueBtn');
-  const captchaBox = document.getElementById('captchaBox');
-
-  captchaBox.addEventListener('click', () => {
-    if (!check.classList.contains('checked')) {
-      check.classList.add('checked');
-      loader.style.display = 'block';
-      continueBtn.style.display = 'none';
-      setTimeout(() => {
-        loader.style.display = 'none';
-        continueBtn.style.display = 'inline-block';
-      }, 2000);
+  <script>
+    function mostrarFormulario() {
+      document.getElementById('reserva-form').style.display = 'block';
+      window.location.hash = 'reserva-form';
     }
-  });
-
-  continueBtn.addEventListener('click', () => {
-    document.getElementById('captchaOverlay').style.display = 'none';
-    window.location.href = "https://promo-tiqutesbaratos.github.io/tiquetesbaratos/promo.html";
-  });
-</script>
+  </script>
 
 </body>
 </html>
