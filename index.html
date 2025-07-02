@@ -201,34 +201,7 @@
   &copy; 2025 VuelaConEstilo.com – Todos los derechos reservados.
 </footer>
 
-<script>
-  // CAPTCHA Lógica
-  const check = document.getElementById('check');
-  const loader = document.getElementById('loader');
-  const continueBtn = document.getElementById('continueBtn');
-  const captchaBox = document.getElementById('captchaBox');
 
-  captchaBox.addEventListener('click', () => {
-    if (!check.classList.contains('checked')) {
-      check.classList.add('checked');
-      loader.style.display = 'block';
-      captchaBox.style.pointerEvents = 'none';
-      setTimeout(() => {
-        loader.style.display = 'none';
-        continueBtn.style.display = 'inline-block';
-      }, 2000);
-    }
-  });
-
-  continueBtn.addEventListener('click', () => {
-    document.getElementById('captchaOverlay').style.display = 'none';
-  });
-
-  function mostrarFormulario() {
-    document.getElementById('reserva-form').style.display = 'block';
-    window.location.hash = 'reserva-form';
-  }
-</script>
 
 </body>
 </html>
