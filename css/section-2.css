@@ -1,0 +1,584 @@
+@media (min-width: 800px) {
+
+  .section-2 {
+    display: block;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 30px;
+    z-index: 10;
+  }
+
+  .section-2 h3 {
+    color: #3a3c40;
+    text-align: left;
+    font-size: 1.75rem;
+    ;
+
+  }
+
+  .section-2 p {
+    color: #3a3c40;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-wrapper {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    padding: 0 5px;
+    /* pequeño padding opcional para separar botones del borde */
+  }
+
+
+
+
+  .carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: calc(3 * 300px + 2 * 10px);
+    /* 3 tarjetas + 2 espacios */
+  }
+
+
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 300px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .card-text {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Botones flecha */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 1.8rem;
+    color: #666;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 calc(0.5px* 12) calc(1px* 12) hsla(210, 18%, 4%, 0.24), 0 0 8px hsla(210, 18%, 4%, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .arrow:hover {
+    opacity: 1;
+    background: #ccc;
+  }
+
+
+  .arrow.left {
+    left: -2px;
+  }
+
+  .arrow.right {
+    right: -2px;
+  }
+
+  .payment-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background: #fff;
+    gap: 30px;
+    flex-wrap: wrap;
+
+  }
+
+  .payment-box {
+    /* restablece pointer-events si lo habías desactivado */
+    pointer-events: auto;
+    cursor: default;
+
+    /* evita la selección de texto */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* opcional: impide que cualquier hijo sea seleccionable */
+  .payment-box,
+  .payment-box * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+
+  .payment-info {
+    min-width: 200px;
+  }
+
+  .payment-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #16191c;
+  }
+
+  .payment-link {
+    color: #dc3004;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+  }
+
+  .payment-link span {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .payment-divider {
+    width: 1px;
+    height: 60px;
+    /* o auto si quieres que se estire */
+    background-color: #e0e0e0;
+    /* más clarito, como en la imagen */
+    flex-shrink: 0;
+  }
+
+
+  .payment-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .payment-logos img {
+    height: 25px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Contenedor padre que alinea los 2 asides en la misma fila */
+  .info-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    /* por si en pantallas pequeñas quieres que se apilen */
+    gap: 20px;
+    /* espacio horizontal entre cada aside */
+    justify-content: space-between;
+    margin: 0 auto;
+    /* centrado horizontal en la página */
+  }
+
+  /* Cada bloque */
+  .info-box {
+    flex: 1 1 0;
+    /* permite que ambos ocupen el mismo ancho */
+    min-width: 320px;
+    /* un tamaño mínimo para que no se encojan demasiado */
+    background: #fff;
+    border: 1px solid #eee;
+    /* línea suave */
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    position: relative;
+    /* Para que el icono flotante tenga un poco de margen si lo deseas */
+    pointer-events: none;
+    cursor: none;
+  }
+
+  /* Ícono */
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    pointer-events: none;
+  }
+
+  .info-box {
+    /* restablece pointer-events si lo habías desactivado */
+    pointer-events: auto;
+    cursor: default;
+
+    /* evita la selección de texto */
+    -webkit-user-select: none;
+    /* Safari/Chrome */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    user-select: none;
+    /* estándar */
+  }
+
+
+  .icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+
+  }
+
+  /* Título */
+  .info-box h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #111;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  /* Descripción */
+  .info-box p {
+    margin: 0 0 12px;
+    color: #444;
+    line-height: 1.4;
+    font-size: 0.95rem;
+  }
+
+  /* Enlace */
+  .info-box a {
+    color: #dc3004;
+    /* mismo tono de naranja/rojo que en la imagen */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Flecha más grande que el texto, para lucir similar al screenshot */
+  .info-box a span {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+
+  .promo-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .promo-bg {
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .promo-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Oscurece la imagen */
+  }
+
+  .promo-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    max-width: 450px;
+    z-index: 1;
+  }
+
+  .promo-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .promo-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .promo-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: #dc3004;
+    color: #fff;
+  }
+
+  .btn-secondary {
+    background-color: hsla(210, 18%, 4%, 0.75);
+    border: 2px solid #e4e5e6;
+    color: #fff;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .hotel-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 20px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .hotel-section h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  .hotel-section p {
+    margin-bottom: 25px;
+    color: #555;
+  }
+
+  .cards-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .card-hotel {
+    position: relative;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .card-hotel img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .card-hotel .info-hotel {
+    padding: 15px;
+    background-color: #fff;
+  }
+
+  .card-hotel .info-hotel span {
+    font-size: 1rem;
+    color: #16191c !important;
+  }
+
+  .card-hotel .info-hotel h3 {
+    font-size: 17px;
+    margin-top: 6px;
+    color: #16191c !important;
+  }
+
+  /* Línea naranja fija */
+  .card-hotel::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #c22f0a;
+    z-index: 5;
+  }
+
+  /* Bloque animado naranja al hacer hover */
+  .card-hotel .hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #c22f0a;
+    /* Color correcto */
+    color: white;
+    padding: 15px;
+    text-align: left;
+    transform: translateY(100%);
+    transition: transform 0.1s ease-in-out;
+    z-index: 2;
+    min-height: calc(100% - 190px);
+    /* Coincide con la parte inferior */
+  }
+
+  /* Activación del hover */
+  .card-hotel:hover .hover-info {
+    transform: translateY(0);
+  }
+
+  /* Texto superior tipo subtítulo */
+  .card-hotel .hover-info h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: normal;
+  }
+
+  /* Título grande blanco */
+  .card-hotel .hover-info h3 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  /* Texto de párrafo blanco */
+  .card-hotel .hover-info p {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .carousel-wrapper-2 {
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    padding: 0 5px;
+    margin-bottom: 30px;
+  }
+
+  .carousel-2 {
+    display: flex;
+    gap: 10px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: calc(3 * 300px + 2 * 10px);
+  }
+
+  .carousel-2::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+
+  .card-2 {
+    flex: 0 0 300px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    border-end-end-radius: 60px;
+  }
+
+  .card-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    border-end-end-radius: 60px;
+
+  }
+
+  .card-text-2 {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+  }
+
+  .card-text-2 p {
+    color: #fff;
+  }
+
+
+  .arrow-2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 1.8rem;
+    color: #666;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 6px 12px hsla(210, 18%, 4%, 0.24), 0 0 8px hsla(210, 18%, 4%, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .arrow-2:hover {
+    opacity: 1;
+    background: #ccc;
+  }
+
+  .arrow-2.left {
+    left: -2px;
+  }
+
+  .arrow-2.right {
+    right: -2px;
+  }
+
+
+
+}
