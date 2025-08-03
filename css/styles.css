@@ -718,7 +718,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 26px;
         color: #007bff;
     }
 
@@ -1311,4 +1311,5 @@ input.error {
         transform: rotate(1440deg) scale(1);
         /* Vuelve al tamaño normal y rotación completa */
     }
+
 }
