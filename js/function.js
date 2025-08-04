@@ -59,50 +59,59 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fechasLabel = document.querySelector("label[for='fechas']")
-  const fechasInput = document.getElementById("fechas")
+const fechasInput = document.getElementById("fechas")
 
-  function updateFechasLabel() {
-    if (soloIdaRadio.checked) {
-      fechasLabel.textContent = "Fecha"
-    } else if (idaRegresoRadio.checked) {
-      fechasLabel.textContent = "Fechas"
+function updateFechasLabel() {
+  if (soloIdaRadio.checked) {
+    fechasLabel.textContent = "Fecha"
+  } else if (idaRegresoRadio.checked) {
+    fechasLabel.textContent = "Fechas"
+  }
+}
+soloIdaRadio.addEventListener("change", updateFechasLabel)
+idaRegresoRadio.addEventListener("change", updateFechasLabel)
+updateFechasLabel()
+
+const calendar = document.getElementById("calendar")
+let startDate = null
+let endDate = null
+let tempEndDate = null // Para mostrar rango mientras pasas el ratón
+
+// Mostrar calendario al hacer clic
+fechasInput.addEventListener("click", (e) => {
+  e.stopPropagation()
+  closeAllDropdowns()
+  calendar.classList.toggle("hidden")
+  renderCalendar()
+})
+
+document.addEventListener("click", () => {
+  calendar.classList.add("hidden")
+})
+
+calendar.addEventListener("click", (e) => {
+  e.stopPropagation() // Evita que el clic dentro cierre el calendario
+})
+
+// ✅ NUEVA función renderCalendar (de hoy a dic 2026)
+function renderCalendar() {
+  calendar.innerHTML = "";
+
+  const fechaActual = new Date();
+  const añoActual = fechaActual.getFullYear();
+  const mesActual = fechaActual.getMonth(); // 0 = enero
+  const añoFinal = 2026;
+
+  for (let año = añoActual; año <= añoFinal; año++) {
+    const mesInicio = (año === añoActual) ? mesActual : 0;
+    const mesFin = 11; // diciembre
+
+    for (let mes = mesInicio; mes <= mesFin; mes++) {
+      const fechaMes = new Date(año, mes, 1);
+      calendar.appendChild(createMonthView(fechaMes));
     }
   }
-  soloIdaRadio.addEventListener("change", updateFechasLabel)
-  idaRegresoRadio.addEventListener("change", updateFechasLabel)
-  updateFechasLabel()
-
-  const calendar = document.getElementById("calendar")
-  const currentDate = new Date()
-  let startDate = null
-  let endDate = null
-  let tempEndDate = null // Para mostrar rango mientras pasas el ratón
-
-  // Mostrar calendario al hacer clic
-  fechasInput.addEventListener("click", (e) => {
-    e.stopPropagation()
-    closeAllDropdowns()
-    calendar.classList.toggle("hidden")
-    renderCalendar(currentDate)
-  })
-
-  document.addEventListener("click", () => {
-    calendar.classList.add("hidden")
-  })
-
-  calendar.addEventListener("click", (e) => {
-    e.stopPropagation() // Evita que el clic dentro cierre el calendario
-  })
-
-  // Renderizar calendario
-  function renderCalendar(date) {
-    calendar.innerHTML = ""
-    const monthsToShow = 2
-    for (let i = 0; i < monthsToShow; i++) {
-      const month = new Date(date.getFullYear(), date.getMonth() + i, 1)
-      calendar.appendChild(createMonthView(month))
-    }
-  }
+}
 
   function createMonthView(date) {
     const monthDiv = document.createElement("div");
@@ -990,3 +999,4 @@ document.getElementById("calendar").addEventListener("click", (e) => {
     clearError(document.getElementById("fechas"));
   }
 });
+
