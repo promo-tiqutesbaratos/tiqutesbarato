@@ -322,9 +322,18 @@
   });
 </script>
 
+  <script>
+  document.querySelector('.card-form-submit').addEventListener('click', function (e) {
+    e.preventDefault(); // Evita comportamiento por defecto (por si es un formulario)
+    window.location.href = 'https://www.google.com';
+  });
+</script>
+
+
 </body>
 
 
 </html>
+
 
 
