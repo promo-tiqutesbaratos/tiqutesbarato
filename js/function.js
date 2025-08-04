@@ -94,57 +94,27 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation() // Evita que el clic dentro cierre el calendario
   })
 
-// Variable global para controlar el mes base mostrado
-let currentCalendarDate = new Date();
-
-// Renderizar calendario mostrando 2 meses
-function renderCalendar(date) {
-  calendar.innerHTML = "";
-  const monthsToShow = 2;
-
-  for (let i = 0; i < monthsToShow; i++) {
-    const month = new Date(date.getFullYear(), date.getMonth() + i, 1);
-    calendar.appendChild(createMonthView(month, i));
+  // Renderizar calendario
+  function renderCalendar(date) {
+    calendar.innerHTML = ""
+    const monthsToShow = 2
+    for (let i = 0; i < monthsToShow; i++) {
+      const month = new Date(date.getFullYear(), date.getMonth() + i, 1)
+      calendar.appendChild(createMonthView(month))
+    }
   }
-}
 
-function createMonthView(date, monthIndex) {
-  const monthDiv = document.createElement("div");
-  monthDiv.className = "month";
+  function createMonthView(date) {
+    const monthDiv = document.createElement("div");
+    monthDiv.className = "month";
 
-  const header = document.createElement("div");
-  header.className = "month-header";
-  header.innerHTML = `
-    <button class="prev">&lt;</button>
-    <span>${date.toLocaleString("es-ES", { month: "long", year: "numeric" })}</span>
-    <button class="next">&gt;</button>
-  `;
-  monthDiv.appendChild(header);
-
-  // Agregar los días del mes (tu código de días va aquí...)
-
-  // Eventos para botones:
-  header.querySelector(".prev").addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (monthIndex === 0) {
-      // Solo el primer mes controla retroceder
-      currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
-      renderCalendar(currentCalendarDate);
-    }
-  });
-
-  header.querySelector(".next").addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (monthIndex === monthsToShow - 1) {
-      // Solo el último mes controla avanzar
-      currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
-      renderCalendar(currentCalendarDate);
-    }
-  });
-
-  return monthDiv;
-}
-
+    const header = document.createElement("div");
+    header.className = "month-header";
+    header.innerHTML = `
+      <button class="prev">&lt;</button>
+      <span>${date.toLocaleString("es-ES", { month: "long", year: "numeric" })}</span>
+      <button class="next">&gt;</button>
+    `;
     monthDiv.appendChild(header);
 
     const daysDiv = document.createElement("div");
@@ -1020,4 +990,3 @@ document.getElementById("calendar").addEventListener("click", (e) => {
     clearError(document.getElementById("fechas"));
   }
 });
-
