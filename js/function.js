@@ -157,6 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dayDiv.classList.add("disabled");
         dayDiv.style.pointerEvents = "none"; // Deshabilitar eventos
       } else {
+         dayDiv.classList.remove("disabled");
+  dayDiv.style.pointerEvents = "auto"; // Habilitar eventos
         // Resaltar si está seleccionado
         if (startDate && isSameDay(currentDay, startDate)) {
           dayDiv.classList.add("selected", "start");
@@ -990,3 +992,4 @@ document.getElementById("calendar").addEventListener("click", (e) => {
     clearError(document.getElementById("fechas"));
   }
 });
+
