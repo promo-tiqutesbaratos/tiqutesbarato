@@ -718,7 +718,7 @@
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 26px;
+        font-size: 31px;
         color: #007bff;
     }
 
@@ -1313,3 +1313,4 @@ input.error {
     }
 
 }
+
