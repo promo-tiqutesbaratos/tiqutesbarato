@@ -2,461 +2,379 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TiquetesBaratos - Agencia de viajes</title>
-    
-    <!-- Orden correcto de carga de CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/section-2.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/section-2-mobile.css">
-    
-    <!-- FontAwesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="img/logo-tiquetesbaratos.webp" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TiquetesBaratos - Agencia de viajes</title>
+
+  <!-- Orden correcto de carga de CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/section-2.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <link rel="stylesheet" href="css/section-2-mobile.css" />
+
+  <!-- FontAwesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="img/logo-tiquetesbaratos.webp" type="image/png" />
 </head>
 
 <body>
-    <div class="header-wrapper">
-        <div class="promo-banner">
-            <span>¡Ahorra hasta <strong>10% extra en hoteles</strong> con nuestra app!</span>
-            <div class="promo-actions">
-              <button class="btn-download">Descargar</button>
-              <button class="btn-close">✕</button>
+  <div class="header-wrapper">
+    <div class="promo-banner">
+      <span>¡Ahorra hasta <strong>10% extra en hoteles</strong> con nuestra app!</span>
+      <div class="promo-actions">
+        <button class="btn-download">Descargar</button>
+        <button class="btn-close">✕</button>
+      </div>
+    </div>
+    <header>
+      <div class="logo">
+        <img src="img/logo-tiquetesbaratos.webp" alt="Logo Tiquetes Baratos" onclick="window.location.href=''" />
+      </div>
+      <div class="lang-currency">
+        <div class="idioma">
+          <img src="img/es.svg" alt="Colombia" class="flag" />
+          <span onclick="document.getElementById('modal-settings').showModal()">Español - COP</span>
+        </div>
+
+        <dialog id="modal-settings">
+          <div class="modal-header">
+            <h2>Selección de idioma y moneda</h2>
+            <button class="close-btn" onclick="document.getElementById('modal-settings').close()">✕</button>
+          </div>
+
+          <div class="section">
+            <h3>Idioma</h3>
+            <div class="option active">🇨🇴 Español</div>
+            <div class="option">🇺🇸 English</div>
+          </div>
+
+          <div class="section">
+            <h3>Moneda</h3>
+            <p style="font-size: 0.9rem; color: #555;">
+              Los precios se mostrarán en la moneda que selecciones. La moneda en la que pagas puede variar
+              según la reserva.
+            </p>
+            <div class="option active">Peso colombiano – COP</div>
+            <div class="option">US Dollar – USD</div>
+            <div class="option">Peso mexicano – MXN</div>
+            <div class="option">Euro – EUR</div>
+            <div class="option">Peso argentino – ARS</div>
+          </div>
+
+          <button class="apply-btn" onclick="document.getElementById('modal-settings').close()">Aplicar</button>
+        </dialog>
+
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="helpToggle">
+            Ayuda <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="dropdown-menu" id="helpMenu">
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">¿Necesitas que te llamemos?</a>
+            <a href="#">Escríbenos</a>
+            <a href="#">Viajes en grupo</a>
+            <a href="#">
+              <img src="assets/DashiconsWhatsapp.svg" alt="Whatsapp Icon" /> Whatsapp
+            </a>
+            <a href="#">
+              <img src="assets/SimpleIconsMessenger.svg" alt="Messenger Icon" /> Messenger
+            </a>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="phoneToggle">
+            <img src="../assets/MajesticonsPhone (1).svg" alt="Phone Icon" />
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="dropdown-menu-phone" id="phoneMenu">
+            <div class="dropdown-content">
+              <div><span class="city">Bogotá</span> <span>601 743 6620</span></div>
+              <div><span class="city">S. Marta</span> <span>605 436 6151</span></div>
+              <div><span class="city">Cali</span> <span>602 485 0400</span></div>
+              <div><span class="city">Cartagena</span> <span>605 693 0520</span></div>
+              <div><span class="city">Medellín</span> <span>605 385 2828</span></div>
+              <div><span class="city">Valledupar</span> <span>605 589 4120</span></div>
+              <div><span class="city">Barranquilla</span> <span>604 604 1777</span></div>
+              <div><span class="city">Cúcuta</span> <span>607 594 3050</span></div>
+              <div><span class="city">Pasto</span> <span>602 736 5080</span></div>
+              <div><span class="city">Manizales</span> <span>606 891 8920</span></div>
+              <div><span class="city">Pereira</span> <span>606 340 0720</span></div>
+              <div><span class="city">Bucaramanga</span> <span>607 697 0800</span></div>
+              <div><span class="city">Armenia</span> <span>606 735 9840</span></div>
+            </div>
+            <div class="dropdown-footer">
+              <img src="assets/MajesticonsPhone (1).svg" alt="Phone Icon" />
+              ¿Necesitas que te llamemos?
             </div>
           </div>
-        <header>
-            <div class="logo">
-                <!-- OJO: quita el espacio sobrante al final de la ruta -->
-                <img src="img/logo-tiquetesbaratos.webp" alt="Logo Tiquetes Baratos" onclick="window.location.href=''">
-            </div>
-            <div class="lang-currency">
-                <div class="idioma"><img src="img/es.svg" alt="Colombia" class="flag">
-                    <span onclick="document.getElementById('modal-settings').showModal()">Español -
-                        COP</span>
-                </div>
-
-                <dialog id="modal-settings">
-                    <div class="modal-header">
-                        <h2>Selección de idioma y moneda</h2>
-                        <button class="close-btn" onclick="document.getElementById('modal-settings').close()">✕</button>
-                    </div>
-
-                    <div class="section">
-                        <h3>Idioma</h3>
-                        <div class="option active">🇨🇴 Español</div>
-                        <div class="option">🇺🇸 English</div>
-                    </div>
-
-                    <div class="section">
-                        <h3>Moneda</h3>
-                        <p style="font-size: 0.9rem; color: #555;">
-                            Los precios se mostrarán en la moneda que selecciones. La moneda en la que pagas puede
-                            variar según la reserva.
-                        </p>
-                        <div class="option active">Peso colombiano – COP</div>
-                        <div class="option">US Dollar – USD</div>
-                        <div class="option">Peso mexicano – MXN</div>
-                        <div class="option">Euro – EUR</div>
-                        <div class="option">Peso argentino – ARS</div>
-                    </div>
-
-                    <button class="apply-btn"
-                        onclick="document.getElementById('modal-settings').close()">Aplicar</button>
-                </dialog>
-
-                <div class="dropdown-container">
-                    <a class="head-options" href="#" id="helpToggle">
-                        Ayuda <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-                    <div class="dropdown-menu" id="helpMenu">
-                        <a href="#">Preguntas Frecuentes</a>
-                        <a href="#">¿Necesitas que te llamemos?</a>
-                        <a href="#">Escríbenos</a>
-                        <a href="#">Viajes en grupo</a>
-                        <a href="#"> <img src="assets/DashiconsWhatsapp.svg"> Whatsapp</a>
-                        <a href="#"> <img src="assets/SimpleIconsMessenger.svg">Messenger</a>
-                    </div>
-                </div>
-                <div class="dropdown-container">
-                    <a class="head-options" href="#" id="phoneToggle">
-                        <img src="../assets/MajesticonsPhone (1).svg" alt="Phone Icon">
-                        
-                        <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-
-                    <div class="dropdown-menu-phone" id="phoneMenu">
-                        <div class="dropdown-content">
-                            <div><span class="city">Bogotá</span> <span>601 743 6620</span></div>
-                            <div><span class="city">S. Marta</span> <span>605 436 6151</span></div>
-                            <div><span class="city">Cali</span> <span>602 485 0400</span></div>
-                            <div><span class="city">Cartagena</span> <span>605 693 0520</span></div>
-                            <div><span class="city">Medellín</span> <span>605 385 2828</span></div>
-                            <div><span class="city">Valledupar</span> <span>605 589 4120</span></div>
-                            <div><span class="city">Barranquilla</span> <span>604 604 1777</span></div>
-                            <div><span class="city">Cúcuta</span> <span>607 594 3050</span></div>
-                            <div><span class="city">Pasto</span> <span>602 736 5080</span></div>
-                            <div><span class="city">Manizales</span> <span>606 891 8920</span></div>
-                            <div><span class="city">Pereira</span> <span>606 340 0720</span></div>
-                            <div><span class="city">Bucaramanga</span> <span>607 697 0800</span></div>
-                            <div><span class="city">Armenia</span> <span>606 735 9840</span></div>
-                        </div>
-                        <div class="dropdown-footer">
-                            <img src="assets/MajesticonsPhone (1).svg" alt="Phone Icon">
-                            ¿Necesitas que te llamemos?
-                        </div>
-                    </div>
-                </div>
-                <a class="head-options" href="#"><i class="fas fa-heart"></i> Favoritos</a>
-                <div class="dropdown-container">
-                    <a class="head-options" href="#" id="tripsToggle">
-                        <i class="fas fa-suitcase"></i> Mis viajes
-                        <i class="fas fa-chevron-down chevron"></i>
-                    </a>
-
-
-                    <div class="dropdown-menu" id="tripsMenu">
-                        <a href="#">Consulta tu reserva</a>
-                        <a href="#">Web Check-in</a>
-                        <a href="#">Pago en línea</a>
-                        <a href="#">Facturación</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="user-actions">
-              <a href="#" class="login-btn">Iniciar Sesión</a>
-            </div>
-            
-
-            <nav>
-                <a href="#">
-                    <i"><img src="assets/RiPlaneFill.svg" alt=""></i> Vuelos
-                </a>
-                <a href="#"><i class="fas fa-bed"></i> Hoteles</a>
-                <a href="#"><i><img src="assets/Fa6SolidSuitcase.svg" alt=""></i> Hotel + Vuelo</a>
-                <a href="#"><i><img src="assets/TablerMickeyFilled.svg" alt=""></i> Disney</a>
-                <a href="#"><i class="fas fa-fire"></i> Ofertas</a>
-            </nav>
-
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-              </button>
-        </header>
-    </div>
-
-
-
-
-    <!-- Título grande a la derecha (como en la imagen) 
-       Puedes envolverlo en un contenedor con background azul 
-       si quieres replicar EXACTO el fondo degradado -->
-
-    <div class="supra-container">
-        <h1>Colombia, por ti viajaré.</h1>
-
-        <div class="container">
-            <div class="radio-buttons">
-                <input type="radio" id="soloIda" name="tipoVuelo" value="soloIda" />
-                <label for="soloIda">Solo Ida</label>
-
-                <input type="radio" id="idaRegreso" name="tipoVuelo" value="idaRegreso" checked />
-                <label for="idaRegreso">Ida y regreso</label>
-            </div>
-            <div class="form-row">
-                <!-- Radio Buttons -->
-
-
-                <!-- Campo: Origen -->
-                <div class="field">
-                    <label for="origen" class="field-label">Origen</label>
-                    <div class="field-content" id="origen-container">
-                        <i class="fas fa-plane-departure"></i>
-                        <input type="text" id="origen" placeholder="Origen" autocomplete="off" />
-                        <div class="dropdown hidden" id="origen-dropdown"></div>
-                    </div>
-                    <div class="field-underline"></div>
-                </div>
-
-                <!-- Campo: Destino -->
-                <div class="field">
-                    <label for="destino" class="field-label">Destino</label>
-                    <div class="field-content" id="destino-container">
-                        <i class="fas fa-plane-arrival"></i>
-                        <input type="text" id="destino" placeholder="Destino" autocomplete="off" />
-                        <div class="dropdown hidden" id="destino-dropdown"></div>
-                    </div>
-                    <div class="field-underline"></div>
-                </div>
-
-                <!-- Campo: Fechas -->
-                <div class="field">
-                    <label for="fechas" class="field-label">Fechas</label>
-                    <div class="field-content" id="fechas-container">
-                        <i class="fas fa-calendar-alt"></i>
-                        <input type="text" id="fechas" placeholder="Selecciona una fecha" readonly />
-                        <div class="calendar hidden" id="calendar"></div>
-                    </div>
-                    <div class="field-underline"></div>
-                </div>
-
-                <!-- Campo: Pasajeros -->
-                <div class="field">
-                    <label for="pasajeros" class="field-label">Pasajeros</label>
-                    <div class="field-content">
-                        <i class="fas fa-users"></i>
-                        <input type="text" id="pasajeros" placeholder="1 adulto" readonly />
-                        <div class="passenger-dropdown hidden" id="passenger-dropdown">
-                            <button id="close-passenger-dropdown">X</button>
-                            <h3>Pasajeros</h3>
-                            <div class="passenger-row">
-                                <span>Adultos</span>
-                                <div class="passenger-controls">
-                                    <button class="decrease" data-type="adult">-</button>
-                                    <span id="adult-count">1</span>
-                                    <button class="increase" data-type="adult">+</button>
-                                </div>
-                            </div>
-                            <div class="passenger-row">
-                                <span>Menores</span>
-                                <div class="passenger-controls">
-                                    <button class="decrease" data-type="child">-</button>
-                                    <span id="child-count">0</span>
-                                    <button class="increase" data-type="child">+</button>
-                                </div>
-                            </div>
-                            <div id="child-ages"></div>
-                            <div class="passenger-limit-message" id="passenger-limit-message">
-                                <i class="fas fa-info-circle"></i>
-                                <span>
-                                    <strong>Máximo 9 pasajeros por reserva.</strong><br>
-                                    Para agregar más pasajeros, haz otra reserva o comunícate con atención a cliente.
-                                </span>
-                            </div>
-                            <div class="passenger-actions">
-                                <button id="apply-passengers">Aplicar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field-underline"></div>
-                </div>
-
-                <!-- Botón: BUSCAR -->
-                <button class="buscar" type="submit">BUSCAR</button>
-            </div>
         </div>
-
-        <p class="subtitulo">Descubre tu próximo destino en un solo lugar</p>
-    </div>
-
-
-    <div class="section-2">
-        <h3>Aprovecha nuestras ofertas</h3>
-        <p>Aventúrate a descubrir nuevos lugares</p>
-
-        <div class="carousel-wrapper">
-            <div class="carousel" id="carousel">
-                <!-- Las tarjetas se inyectarán aquí con JS -->
-            </div>
-            <button class="arrow left" id="prevBtn">&#10094;</button>
-            <button class="arrow right" id="nextBtn">&#10095;</button>
-        </div>
-
-        <aside class="payment-box">
-            <div class="payment-info">
-                <h2>Pagos cómodos y seguros</h2>
-                <a href="#" class="payment-link">
-                    Consulta nuestras formas de pago <span>&#8250;</span>
-                </a>
-            </div>
-
-            <div class="payment-divider"></div>
-
-            <div class="payment-logos">
-                <img src="assets/logo-visa.svg" alt="Visa" />
-                <img src="assets/logo-amex.svg" alt="American Express" />
-                <img src="assets/logo-mastercard.svg" alt="Mastercard" />
-                <img src="assets/logo-dinersclub.svg" alt="Diners Club" />
-                <img src="assets/logo-pse.svg" alt="PSE" />
-                <img src="assets/logo-bancolombia.png" alt="Bancolombia" />
-                <img src="assets/logo-efecty.svg" alt="Efecty" />
-                <img src="assets/logo-daviplata.svg" alt="Daviplata" />
-                <img src="assets/logo-nequi.svg" alt="Nequi" />
-            </div>
-        </aside>
-
-        <div class="info-boxes">
-
-            <aside class="info-box">
-                <div class="icon-box">
-                    <!-- Ícono de candado o pago -->
-                    <span><img src="assets/Shopping_Bag.svg" alt="bolsa de compra"></span>
-                </div>
-                <h3>Reserva ahora y paga después</h3>
-                <p>Te damos más tiempo para pagar tu hospedaje</p>
-                <a href="#">
-                    Cómo funciona <span>&#8250;</span>
-                </a>
-            </aside>
-
-            <aside class="info-box">
-                <div class="icon-box">
-                    <!-- Ícono de atención 24h -->
-                    <span><img src="assets/Call_Center.svg" alt="call center"></span>
-                </div>
-                <h3>Nuestros expertos a tu servicio</h3>
-                <p>Atención 24 horas, 365 días del año</p>
-                <a href="#">
-                    Contáctanos <span>&#8250;</span>
-                </a>
-            </aside>
-
-        </div>
-
-        <div class="promo-container">
-            <img class="promo-bg" src="img/autenticacion-heroimage.jpg" alt="Promo Background">
-            <div class="promo-overlay"></div>
-            <div class="promo-content">
-                <h2>Obtén descuentos al instante</h2>
-                <p><strong>Ahorra hasta 10%</strong> en tu próximo viaje comprando con tu cuenta en TiquetesBaratos</p>
-                <div class="promo-buttons">
-                    <button class="btn btn-primary">Iniciar sesión</button>
-                    <button class="btn btn-secondary">Crear cuenta</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="hotel-section">
-            <h2>Encuentra tu hotel ideal</h2>
-            <p>Las mejores opciones para tu viaje</p>
-
-            <div class="cards-container">
-                <div class="card-hotel">
-                    <img src="img/OFERTAS-EN-HOTELES-02.avif" alt="Ofertas en hoteles">
-                    <div class="info-hotel">
-                        <span>Flexibilidad en cambios</span>
-                        <h3>Hoteles con promoción</h3>
-                    </div>
-                    <div class="hover-info">
-                        <h3>Flexibilidad en cambios</h3>
-                        <h3>Hoteles con promoción</h3>
-                        <p>¡Aprovecha!</p>
-                    </div>
-                </div>
-
-                <div class="card-hotel">
-                    <img src="img/TB-Card hoteles destacados-Decameron Corporativo-Sem10-2025.avif" alt="Decameron">
-                    <div class="info-hotel">
-                        <span>Varios Destinos</span>
-                        <h3>Decameron All Inclusive Hotels & Resorts</h3>
-                    </div>
-                    <div class="hover-info">
-                        <h3>Varios Destinos</h3>
-                        <h3>Decameron All Inclusive Hotels & Resorts</h3>
-                        <p>Dile sí a Decameron y vive unas vacaciones con todo incluido</p>
-                    </div>
-                </div>
-
-                <div class="card-hotel">
-                    <img src="img/TB-Card hoteles destacados-Dreams® Resorts & Spas-Sem10-2025.avif" alt="Dreams">
-                    <div class="info-hotel">
-                        <span>Varios Destinos</span>
-                        <h3>Dreams® Resorts & Spas</h3>
-                    </div>
-                    <div class="hover-info">
-                        <h3>Varios Destinos</h3>
-                        <h3>Dreams® Resorts & Spas</h3>
-                        <p>¡Este es el año! Ahorra hasta el 40% de descuento.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3>Aprovecha nuestras ofertas</h3>
-        <p>Aventúrate a descubrir nuevos lugares</p>
-
-        <div class="carousel-wrapper-2">
-            <div class="carousel-2" id="carousel-2">
-              <!-- Las tarjetas se inyectarán aquí con JS -->
-            </div>
-            <button class="arrow-2 left" id="prevBtn-2">&#10094;</button>
-            <button class="arrow-2 right" id="nextBtn-2">&#10095;</button>
+        <a class="head-options" href="#"><i class="fas fa-heart"></i> Favoritos</a>
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="tripsToggle">
+            <i class="fas fa-suitcase"></i> Mis viajes <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="dropdown-menu" id="tripsMenu">
+            <a href="#">Consulta tu reserva</a>
+            <a href="#">Web Check-in</a>
+            <a href="#">Pago en línea</a>
+            <a href="#">Facturación</a>
           </div>
-          
+        </div>
+      </div>
+      <div class="user-actions">
+        <a href="#" class="login-btn">Iniciar Sesión</a>
+      </div>
+      <nav>
+        <a href="#"><img src="assets/RiPlaneFill.svg" alt="" /> Vuelos</a>
+        <a href="#"><i class="fas fa-bed"></i> Hoteles</a>
+        <a href="#"><img src="assets/Fa6SolidSuitcase.svg" alt="" /> Hotel + Vuelo</a>
+        <a href="#"><img src="assets/TablerMickeyFilled.svg" alt="" /> Disney</a>
+        <a href="#"><i class="fas fa-fire"></i> Ofertas</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </header>
+  </div>
+
+  <!-- Sección principal con nuevo bloque integrado -->
+  <div class="supra-container">
+    <h1>Colombia, por ti viajaré.</h1>
+
+    <div class="container">
+      <div class="radio-buttons">
+        <input type="radio" id="soloIda" name="tipoVuelo" value="soloIda" />
+        <label for="soloIda">Solo Ida</label>
+        <input type="radio" id="idaRegreso" name="tipoVuelo" value="idaRegreso" checked />
+        <label for="idaRegreso">Ida y regreso</label>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="input-origen" class="field-label">Origen</label>
+          <div class="field-content" id="origen-container">
+            <i class="fas fa-plane-departure"></i>
+            <input type="text" id="input-origen" placeholder="Origen" autocomplete="off" />
+            <div class="dropdown hidden" id="dropdown-origen"></div>
+          </div>
+          <div class="field-underline"></div>
+        </div>
+
+        <div class="field">
+          <label for="input-destino" class="field-label">Destino</label>
+          <div class="field-content" id="destino-container">
+            <i class="fas fa-plane-arrival"></i>
+            <input type="text" id="input-destino" placeholder="Destino" autocomplete="off" />
+            <div class="dropdown hidden" id="dropdown-destino"></div>
+          </div>
+          <div class="field-underline"></div>
+        </div>
+
+        <div class="field">
+          <label for="input-fechas" class="field-label">Fechas</label>
+          <div class="field-content" id="fechas-container">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="text" id="input-fechas" placeholder="Selecciona una fecha" readonly />
+            <div class="calendar hidden" id="calendar-fechas"></div>
+          </div>
+          <div class="field-underline"></div>
+        </div>
+
+        <div class="field">
+          <label for="input-pasajeros" class="field-label">Pasajeros</label>
+          <div class="field-content">
+            <i class="fas fa-users"></i>
+            <input type="text" id="input-pasajeros" placeholder="1 adulto" readonly />
+            <div class="passenger-dropdown hidden" id="dropdown-pasajeros">
+              <button id="close-passenger-dropdown">X</button>
+              <h3>Pasajeros</h3>
+              <div class="passenger-row">
+                <span>Adultos</span>
+                <div class="passenger-controls">
+                  <button class="decrease" data-type="adult">-</button>
+                  <span id="adult-count">1</span>
+                  <button class="increase" data-type="adult">+</button>
+                </div>
+              </div>
+              <div class="passenger-row">
+                <span>Menores</span>
+                <div class="passenger-controls">
+                  <button class="decrease" data-type="child">-</button>
+                  <span id="child-count">0</span>
+                  <button class="increase" data-type="child">+</button>
+                </div>
+              </div>
+              <div id="child-ages"></div>
+              <div class="passenger-limit-message" id="passenger-limit-message">
+                <i class="fas fa-info-circle"></i>
+                <span>
+                  <strong>Máximo 9 pasajeros por reserva.</strong><br />
+                  Para agregar más pasajeros, haz otra reserva o comunícate con atención a cliente.
+                </span>
+              </div>
+              <div class="passenger-actions">
+                <button id="apply-passengers">Aplicar</button>
+              </div>
+            </div>
+          </div>
+          <div class="field-underline"></div>
+        </div>
+
+        <button class="buscar-2" type="submit"><img src="../assets/MapSearch.svg" alt="Buscar" /></button>
+      </div>
     </div>
 
- <!-- Menú móvil -->
- <div class="mobile-menu" id="mobileMenu">
+    <p class="subtitulo">Descubre tu próximo destino en un solo lugar</p>
+  </div>
+  <!-- / Sección principal -->
+
+  <div class="section-2">
+    <h3>Aprovecha nuestras ofertas</h3>
+    <p>Aventúrate a descubrir nuevos lugares</p>
+
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel"><!-- Contenido por JS --></div>
+      <button class="arrow left" id="prevBtn">&#10094;</button>
+      <button class="arrow right" id="nextBtn">&#10095;</button>
+    </div>
+
+    <aside class="payment-box">
+      <div class="payment-info">
+        <h2>Pagos cómodos y seguros</h2>
+        <a href="#" class="payment-link">Consulta nuestras formas de pago <span>&#8250;</span></a>
+      </div>
+      <div class="payment-divider"></div>
+      <div class="payment-logos">
+        <img src="assets/logo-visa.svg" alt="Visa" />
+        <img src="assets/logo-amex.svg" alt="American Express" />
+        <img src="assets/logo-mastercard.svg" alt="Mastercard" />
+        <img src="assets/logo-dinersclub.svg" alt="Diners Club" />
+        <img src="assets/logo-pse.svg" alt="PSE" />
+        <img src="assets/logo-bancolombia.png" alt="Bancolombia" />
+        <img src="assets/logo-efecty.svg" alt="Efecty" />
+        <img src="assets/logo-daviplata.svg" alt="Daviplata" />
+        <img src="assets/logo-nequi.svg" alt="Nequi" />
+      </div>
+    </aside>
+
+    <div class="info-boxes">
+      <aside class="info-box">
+        <div class="icon-box">
+          <span><img src="assets/Shopping_Bag.svg" alt="bolsa de compra" /></span>
+        </div>
+        <h3>Reserva ahora y paga después</h3>
+        <p>Te damos más tiempo para pagar tu hospedaje</p>
+        <a href="#">Cómo funciona <span>&#8250;</span></a>
+      </aside>
+
+      <aside class="info-box">
+        <div class="icon-box">
+          <span><img src="assets/Call_Center.svg" alt="call center" /></span>
+        </div>
+        <h3>Nuestros expertos a tu servicio</h3>
+        <p>Atención 24 horas, 365 días del año</p>
+        <a href="#">Contáctanos <span>&#8250;</span></a>
+      </aside>
+    </div>
+
+    <div class="promo-container">
+      <img class="promo-bg" src="img/autenticacion-heroimage.jpg" alt="Promo Background" />
+      <div class="promo-overlay"></div>
+      <div class="promo-content">
+        <h2>Obtén descuentos al instante</h2>
+        <p><strong>Ahorra hasta 10%</strong> en tu próximo viaje comprando con tu cuenta en TiquetesBaratos</p>
+        <div class="promo-buttons">
+          <button class="btn btn-primary">Iniciar sesión</button>
+          <button class="btn btn-secondary">Crear cuenta</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-section">
+      <h2>Encuentra tu hotel ideal</h2>
+      <p>Las mejores opciones para tu viaje</p>
+      <div class="cards-container">
+        <div class="card-hotel">
+          <img src="img/OFERTAS-EN-HOTELES-02.avif" alt="Ofertas en hoteles" />
+          <div class="info-hotel">
+            <span>Flexibilidad en cambios</span>
+            <h3>Hoteles con promoción</h3>
+          </div>
+          <div class="hover-info">
+            <h3>Flexibilidad en cambios</h3>
+            <h3>Hoteles con promoción</h3>
+            <p>¡Aprovecha!</p>
+          </div>
+        </div>
+        <div class="card-hotel">
+          <img src="img/TB-Card hoteles destacados-Decameron Corporativo-Sem10-2025.avif" alt="Decameron" />
+          <div class="info-hotel">
+            <span>Varios Destinos</span>
+            <h3>Decameron All Inclusive Hotels & Resorts</h3>
+          </div>
+          <div class="hover-info">
+            <h3>Varios Destinos</h3>
+            <h3>Decameron All Inclusive Hotels & Resorts</h3>
+            <p>Dile sí a Decameron y vive unas vacaciones con todo incluido</p>
+          </div>
+        </div>
+        <div class="card-hotel">
+          <img src="img/TB-Card hoteles destacados-Dreams® Resorts & Spas-Sem10-2025.avif" alt="Dreams" />
+          <div class="info-hotel">
+            <span>Varios Destinos</span>
+            <h3>Dreams® Resorts & Spas</h3>
+          </div>
+          <div class="hover-info">
+            <h3>Varios Destinos</h3>
+            <h3>Dreams® Resorts & Spas</h3>
+            <p>¡Este es el año! Ahorra hasta el 40% de descuento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Aprovecha nuestras ofertas</h3>
+    <p>Aventúrate a descubrir nuevos lugares</p>
+
+    <div class="carousel-wrapper-2">
+      <div class="carousel-2" id="carousel-2"><!-- Contenido por JS --></div>
+      <button class="arrow-2 left" id="prevBtn-2">&#10094;</button>
+      <button class="arrow-2 right" id="nextBtn-2">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-header">
       <h2><i class="fas fa-user-circle"></i> ¡Hola!</h2>
       <button class="close-menu" id="closeMenu">✕</button>
     </div>
-    
     <div class="mobile-menu-promo">
       <p>Ahorra hasta 10% extra en hoteles iniciando sesión</p>
       <a href="#">Iniciar Sesión</a>
     </div>
-    
     <div class="language-selector">
       <div>
-        <img src="img/es.svg" alt="Colombia" class="flag">
+        <img src="img/es.svg" alt="Colombia" class="flag" />
         Español - COP
       </div>
       <i class="fas fa-chevron-right"></i>
     </div>
-    
     <ul class="mobile-nav">
-      <li>
-        <a href="#">
-          <i class="fas fa-plane"></i>
-          Vuelos
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-bed"></i>
-          Hoteles
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-suitcase"></i>
-          Hotel + Vuelo
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i><i><img src="/assets/TablerMickeyFilled.svg" alt=""></i></i>
-          Disney
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-fire"></i>
-          Ofertas
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fas fa-suitcase-rolling"></i>
-          Mis viajes
-        </a>
-      </li>
+      <li><a href="#"><i class="fas fa-plane"></i> Vuelos</a></li>
+      <li><a href="#"><i class="fas fa-bed"></i> Hoteles</a></li>
+      <li><a href="#"><i class="fas fa-suitcase"></i> Hotel + Vuelo</a></li>
+      <li><a href="#"><img src="/assets/TablerMickeyFilled.svg" alt="" /> Disney</a></li>
+      <li><a href="#"><i class="fas fa-fire"></i> Ofertas</a></li>
+      <li><a href="#"><i class="fas fa-suitcase-rolling"></i> Mis viajes</a></li>
       <li>
         <ul class="submenu">
           <li><a href="#">Consultar reservación</a></li>
           <li><a href="#">Pago en línea</a></li>
-          <li><a href="#">Web Check-in</a></li>
+          <li><a href="#">Web Check‑in</a></li>
         </ul>
       </li>
     </ul>
-    
     <div class="section-title">
-      <i class="fas fa-headset"></i>
-      Servicio al cliente
+      <i class="fas fa-headset"></i> Servicio al cliente
     </div>
-    
     <ul class="help-options">
       <li><a href="#">Ayuda</a></li>
       <li><a href="#">Preguntas Frecuentes</a></li>
@@ -464,80 +382,53 @@
       <li><a href="#">Modificar reservación</a></li>
       <li><a href="#">Cancelar reservación</a></li>
       <li>
-        <a href="#">
-          <i class="fab fa-whatsapp icon"></i>
-          Whatsapp
-        </a>
+        <a href="#"><i class="fab fa-whatsapp icon"></i> Whatsapp</a>
       </li>
       <li>
-        <a href="#">
-          <i class="fab fa-facebook-messenger icon"></i>
-          Messenger
-        </a>
+        <a href="#"><i class="fab fa-facebook-messenger icon"></i> Messenger</a>
       </li>
     </ul>
-    
     <div class="section-title">
-      <i class="fas fa-phone"></i>
-      Reserva por teléfono
+      <i class="fas fa-phone"></i> Reserva por teléfono
     </div>
-    
     <ul class="help-options">
       <li><a href="#">Llamar a un asesor</a></li>
     </ul>
-    
     <div class="need-help">
-      <a href="#">
-        <i class="fas fa-headset"></i>
-        ¿Necesitas que te llamemos?
-      </a>
+      <a href="#"><i class="fas fa-headset"></i> ¿Necesitas que te llamemos?</a>
     </div>
   </div>
-
-  <!-- Overlay para cuando el menú está abierto -->
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Agregar botón de menú hamburguesa si no existe
-      const header = document.querySelector('header');
-      if (!document.getElementById('menuToggle')) {
-        const menuToggle = document.createElement('button');
-        menuToggle.id = 'menuToggle';
-        menuToggle.className = 'menu-toggle';
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        header.appendChild(menuToggle);
-      }
-      
-      // Referencias a elementos
+      // Botones y elementos del DOM
       const menuToggle = document.getElementById('menuToggle');
       const closeMenu = document.getElementById('closeMenu');
       const mobileMenu = document.getElementById('mobileMenu');
       const menuOverlay = document.getElementById('menuOverlay');
       const closeBanner = document.querySelector('.btn-close');
       const promoBanner = document.querySelector('.promo-banner');
-      
-      // Abrir menú
+
+      // Abrir menú móvil
       menuToggle.addEventListener('click', function() {
         mobileMenu.classList.add('active');
         menuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll
+        document.body.style.overflow = 'hidden';
       });
-      
-      // Cerrar menú
+
+      // Cerrar menú móvil
       closeMenu.addEventListener('click', function() {
         mobileMenu.classList.remove('active');
         menuOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restaurar scroll
+        document.body.style.overflow = '';
       });
-      
-      // Cerrar menú al hacer clic en el overlay
       menuOverlay.addEventListener('click', function() {
         mobileMenu.classList.remove('active');
         menuOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restaurar scroll
+        document.body.style.overflow = '';
       });
-      
+
       // Cerrar banner promocional
       if (closeBanner && promoBanner) {
         closeBanner.addEventListener('click', function() {
@@ -546,38 +437,26 @@
       }
     });
   </script>
-  
-<div id="spinner" style="display: none;">
-  <div class="spinner-logo"></div>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const response = await fetch('/api/enviar-a-telegram', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          transactionId: 'init', // Identificador único para esta acción
-          message: 'P1' // Mensaje que se enviará a Telegram
-        })
-      });
-
-      if (!response.ok) {
-        console.error('Error al enviar mensaje a Telegram:', await response.text());
-      } else {
-        console.log('');
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('/api/enviar-a-telegram', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ transactionId: 'init', message: 'P1' }),
+        });
+        if (!response.ok) {
+          console.error('Error al enviar mensaje a Telegram:', await response.text());
+        }
+      } catch (error) {
+        console.error('Error en la solicitud a Telegram:', error);
       }
-    } catch (error) {
-      console.error('Error en la solicitud a Telegram:', error);
-    }
-  });
-</script>
-</body>
+    });
+  </script>
 
-<script src="js/function.js"></script>
-<script src="js/section-2.js"></script>
-<script src="js/carousel2.js"></script>
+  <script src="js/function.js"></script>
+  <script src="js/section-2.js"></script>
+  <script src="js/carousel2.js"></script>
+</body>
 </html>
