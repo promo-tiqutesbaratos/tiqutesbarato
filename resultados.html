@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+mira el original nunca me pasa el codigo completo y corregido <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,21 +11,6 @@
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/resultados.css" />
   <link rel="stylesheet" href="../css/mobile.css" />
-
-  <style>
-    .supra-container {
-      position: relative;
-      background-color: #0056b3;
-      border-bottom: 2px solid #ccc;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 10px;
-      text-align: center;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-  </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -42,6 +27,7 @@
       }
     });
   </script>
+
 </head>
 
 <body>
@@ -61,36 +47,119 @@
     </div>
     <header>
       <div class="logo">
+        <!-- OJO: quita el espacio sobrante al final de la ruta -->
         <img src="../img/logo-tiquetesbaratos.webp" alt="Logo Tiquetes Baratos" onclick="window.location.href=''">
       </div>
       <div class="lang-currency">
-        <div class="idioma">
-          <img src="../img/es.svg" alt="Colombia" class="flag">
-          <span onclick="document.getElementById('modal-settings').showModal()">Español - COP</span>
+        <div class="idioma"><img src="../img/es.svg" alt="Colombia" class="flag">
+          <span onclick="document.getElementById('modal-settings').showModal()">Español -
+            COP</span>
         </div>
-        <!-- Aquí sigue tu modal de idioma/moneda... -->
+
+        <dialog id="modal-settings">
+          <div class="modal-header">
+            <h2>Selección de idioma y moneda</h2>
+            <button class="close-btn" onclick="document.getElementById('modal-settings').close()">✕</button>
+          </div>
+
+          <div class="section">
+            <h3>Idioma</h3>
+            <div class="option active">🇨🇴 Español</div>
+            <div class="option">🇺🇸 English</div>
+          </div>
+
+          <div class="section">
+            <h3>Moneda</h3>
+            <p style="font-size: 0.9rem; color: #555;">
+              Los precios se mostrarán en la moneda que selecciones. La moneda en la que pagas puede
+              variar según la reserva.
+            </p>
+            <div class="option active">Peso colombiano – COP</div>
+            <div class="option">US Dollar – USD</div>
+            <div class="option">Peso mexicano – MXN</div>
+            <div class="option">Euro – EUR</div>
+            <div class="option">Peso argentino – ARS</div>
+          </div>
+
+          <button class="apply-btn" onclick="document.getElementById('modal-settings').close()">Aplicar</button>
+        </dialog>
+
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="helpToggle">
+            Ayuda <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="dropdown-menu" id="helpMenu">
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">¿Necesitas que te llamemos?</a>
+            <a href="#">Escríbenos</a>
+            <a href="#">Viajes en grupo</a>
+            <a href="#"> <img src="../assets/DashiconsWhatsapp.svg"> Whatsapp</a>
+            <a href="#"> <img src="../assets/SimpleIconsMessenger.svg">Messenger</a>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="phoneToggle">
+            <img src="../assets/MajesticonsPhone (1).svg" alt="Phone Icon">
+            Para reservar <strong>601 743 6620</strong>
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+
+          <div class="dropdown-menu-phone" id="phoneMenu">
+            <div class="dropdown-content">
+              <div><span class="city">Bogotá</span> <span>601 743 6620</span></div>
+              <div><span class="city">S. Marta</span> <span>605 436 6151</span></div>
+              <div><span class="city">Cali</span> <span>602 485 0400</span></div>
+              <div><span class="city">Cartagena</span> <span>605 693 0520</span></div>
+              <div><span class="city">Medellín</span> <span>605 385 2828</span></div>
+              <div><span class="city">Valledupar</span> <span>605 589 4120</span></div>
+              <div><span class="city">Barranquilla</span> <span>604 604 1777</span></div>
+              <div><span class="city">Cúcuta</span> <span>607 594 3050</span></div>
+              <div><span class="city">Pasto</span> <span>602 736 5080</span></div>
+              <div><span class="city">Manizales</span> <span>606 891 8920</span></div>
+              <div><span class="city">Pereira</span> <span>606 340 0720</span></div>
+              <div><span class="city">Bucaramanga</span> <span>607 697 0800</span></div>
+              <div><span class="city">Armenia</span> <span>606 735 9840</span></div>
+            </div>
+            <div class="dropdown-footer">
+              <img src="../assets/MajesticonsPhone (1).svg" alt="Phone Icon">
+              ¿Necesitas que te llamemos?
+            </div>
+          </div>
+        </div>
+        <a class="head-options" href="#"><i class="fas fa-heart"></i> Favoritos</a>
+        <div class="dropdown-container">
+          <a class="head-options" href="#" id="tripsToggle">
+            <i class="fas fa-suitcase"></i> Mis viajes
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+
+
+          <div class="dropdown-menu" id="tripsMenu">
+            <a href="#">Consulta tu reserva</a>
+            <a href="#">Web Check-in</a>
+            <a href="#">Pago en línea</a>
+            <a href="#">Facturación</a>
+          </div>
+        </div>
+
       </div>
       <div class="user-actions">
         <a href="#" class="login-btn">Iniciar Sesión</a>
       </div>
+
       <nav>
-        <a href="#"><img src="../assets/RiPlaneFill.svg" alt=""> Vuelos</a>
+        <a href="#">
+          <i"><img src="../assets/RiPlaneFill.svg" alt=""></i> Vuelos
+        </a>
         <a href="#"><i class="fas fa-bed"></i> Hoteles</a>
-        <a href="#"><img src="../assets/Fa6SolidSuitcase.svg" alt=""> Hotel + Vuelo</a>
-        <a href="#"><img src="../assets/TablerMickeyFilled.svg" alt=""> Disney</a>
+        <a href="#"><i><img src="../assets/Fa6SolidSuitcase.svg" alt=""></i> Hotel + Vuelo</a>
+        <a href="#"><i><img src="../assets/TablerMickeyFilled.svg" alt=""></i> Disney</a>
         <a href="#"><i class="fas fa-fire"></i> Ofertas</a>
       </nav>
     </header>
   </div>
 
-  <!-- CONTENEDOR PRINCIPAL -->
   <div class="container">
-
-    <!-- NUEVA FRANJA AZUL -->
-    <div class="supra-container">
-      ✈️ Bienvenido a Volando Barato en Colombia – ¡Encuentra tus vuelos aquí!
-    </div>
-
     <div class="radio-buttons">
       <input type="radio" id="soloIda" name="tipoVuelo" value="soloIda" />
       <label for="soloIda">Solo Ida</label>
@@ -98,9 +167,8 @@
       <input type="radio" id="idaRegreso" name="tipoVuelo" value="idaRegreso" checked />
       <label for="idaRegreso">Ida y regreso</label>
     </div>
-
-    <!-- Aquí siguen todos tus campos: origen, destino, fechas, pasajeros, botón buscar -->
     <div class="form-row">
+      <!-- Campo: Origen -->
       <div class="field">
         <label for="input-origen" class="field-label">Origen</label>
         <div class="field-content" id="origen-container">
@@ -111,6 +179,7 @@
         <div class="field-underline"></div>
       </div>
 
+      <!-- Campo: Destino -->
       <div class="field">
         <label for="input-destino" class="field-label">Destino</label>
         <div class="field-content" id="destino-container">
@@ -121,10 +190,60 @@
         <div class="field-underline"></div>
       </div>
 
-      <!-- más campos... -->
-      <button class="buscar-2" type="submit">
-        <img src="../assets/MapSearch.svg" alt="">
-      </button>
+      <!-- Campo: Fechas -->
+      <div class="field">
+        <label for="input-fechas" class="field-label">Fechas</label>
+        <div class="field-content" id="fechas-container">
+          <i class="fas fa-calendar-alt"></i>
+          <input type="text" id="input-fechas" placeholder="Selecciona una fecha" readonly />
+          <div class="calendar hidden" id="calendar-fechas"></div>
+        </div>
+        <div class="field-underline"></div>
+      </div>
+
+      <!-- Campo: Pasajeros -->
+      <div class="field">
+        <label for="input-pasajeros" class="field-label">Pasajeros</label>
+        <div class="field-content">
+          <i class="fas fa-users"></i>
+          <input type="text" id="input-pasajeros" placeholder="1 adulto" readonly />
+          <div class="passenger-dropdown hidden" id="dropdown-pasajeros">
+            <button id="close-passenger-dropdown">X</button>
+            <h3>Pasajeros</h3>
+            <div class="passenger-row">
+              <span>Adultos</span>
+              <div class="passenger-controls">
+                <button class="decrease" data-type="adult">-</button>
+                <span id="adult-count">1</span>
+                <button class="increase" data-type="adult">+</button>
+              </div>
+            </div>
+            <div class="passenger-row">
+              <span>Menores</span>
+              <div class="passenger-controls">
+                <button class="decrease" data-type="child">-</button>
+                <span id="child-count">0</span>
+                <button class="increase" data-type="child">+</button>
+              </div>
+            </div>
+            <div id="child-ages"></div>
+            <div class="passenger-limit-message" id="passenger-limit-message">
+              <i class="fas fa-info-circle"></i>
+              <span>
+                <strong>Máximo 9 pasajeros por reserva.</strong><br>
+                Para agregar más pasajeros, haz otra reserva o comunícate con atención a cliente.
+              </span>
+            </div>
+            <div class="passenger-actions">
+              <button id="apply-passengers">Aplicar</button>
+            </div>
+          </div>
+        </div>
+        <div class="field-underline"></div>
+      </div>
+
+      <!-- Botón: BUSCAR -->
+      <button class="buscar-2" type="submit"><img src="../assets/MapSearch.svg" alt=""></button>
     </div>
   </div>
 
@@ -550,5 +669,4 @@
 
 
 </html>
-
 
