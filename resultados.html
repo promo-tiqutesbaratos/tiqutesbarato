@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +11,28 @@
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/resultados.css" />
   <link rel="stylesheet" href="../css/mobile.css" />
+
+  <style>
+    .supra-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #0056b3;
+      border-bottom: 2px solid #ccc;
+      width: 100%;
+      padding: 8px 16px;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      z-index: 9999;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 40px; /* deja espacio para que no tape el header */
+      font-family: Arial, sans-serif;
+    }
+  </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -32,11 +53,19 @@
 </head>
 
 <body>
+  <!-- Franja superior -->
+  <div class="supra-container">
+    ✈️ ¡Bienvenido a Volando Barato en Colombia!
+  </div>
+
   <!-- Loader -->
   <div id="loader">
     <p>Buscando las mejores ofertas de vuelos...</p>
     <img src="../assets/Loading-step.gif" alt="Cargando">
   </div>
+
+  <div class="header-wrapper">
+    <!-- aquí sigue todo tu header y contenido tal cual lo compartiste -->
 
   <div class="header-wrapper">
     <div class="promo-banner">
@@ -667,5 +696,6 @@
   <script src="../js/main.js" type="module"></script>
   <script src="../js/mobile-flight-view.js"></script>
 </body>
+
 
 </html>
