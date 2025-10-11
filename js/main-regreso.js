@@ -107,11 +107,11 @@ function randomFlightNo(air) {
 }
 function randomPricesSorted(count) {
   // El primer precio siempre será 75.900, los demás aleatorios
-  const vals = [75900, ...Array.from({ length: count - 1 }, () => randInt(150000, 750000))]
+  const vals = [85900, ...Array.from({ length: count - 1 }, () => randInt(150000, 750000))]
     .sort((a, b) => a - b);
 
   // Asegura que el primer precio sea 75.900
-  vals[0] = 75900;
+  vals[0] = 85900;
 
   return vals.map((v, i) =>
     i < count - 1 && Math.random() < 0.2
@@ -549,4 +549,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initFlights();
     dialog.close();
   });
+
 });
