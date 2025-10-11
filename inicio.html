@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promociones Nacionales ✈</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #020202, #000);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: url('https://cdn.pixabay.com/photo/2023/01/12/22/29/plane-7715243_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 0;
+    }
+
+    .banner {
+      z-index: 2;
+      margin-top: 30px;
+      text-align: center;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+      animation: glow 2s infinite alternate;
+    }
+
+    .banner img {
+      width: 70px;
+      display: block;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 0 10px cyan);
+    }
+
+    .banner h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px cyan; }
+      to { text-shadow: 0 0 25px #00ffff; }
+    }
+
+    .contenido {
+      z-index: 2;
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .contenido h2 {
+      color: #00ffff;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+
+    .contenido p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .boton {
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      border: none;
+      color: #fff;
+      padding: 14px 35px;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .boton:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+    }
+
+    footer {
+      z-index: 2;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid rgba(0, 255, 255, 0.3);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #00ffff;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .banner h1 { font-size: 1.5rem; }
+      .contenido h2 { font-size: 1.3rem; }
+      .boton { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="banner">
+    <img src="https://cdn-icons-png.flaticon.com/512/2972/2972557.png" alt="Avión">
+    <h1>Promociones Nacionales</h1>
+  </div>
+
+  <div class="contenido">
+    <h2>Descuentos en Vuelos ✈</h2>
+    <p>Viaja por Colombia con tarifas desde <strong>$79.900 COP</strong>.<br>¡Promociones por tiempo limitado!</p>
+
+    <div class="botones">
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzbmF0aW9uLmFwcc2Mv')">
+        <button class="boton">🚀 Cotizar</button>
+      </a>
+
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzbmF0aW9uLmFwcc2Mv')">
+        <button class="boton">🛒 Reservar</button>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <a href="#">Inicio</a> |
+      <a href="#">Promociones</a> |
+      <a href="#">Rutas</a> |
+      <a href="#">Contacto</a>
+    </p>
+    <p>© 2025 Promociones Nacionales — Viaja más, paga menos 🛫</p>
+  </footer>
+</body>
+</html>
