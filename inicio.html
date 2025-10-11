@@ -3,113 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futuritas | Promociones Nacionales</title>
+  <title>Vuelos Económicos Nacionales ✈</title>
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #000428, #004e92);
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 0;
-      position: relative;
-    }
-
-    header h2 {
-      margin: 0;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-      font-weight: 600;
-    }
-
-    .banner {
-      background-image: url('https://i.imgur.com/zZbPz5O.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 350px;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #fff;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
+      overflow: hidden;
     }
 
-    .banner::after {
+    .contenedor {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(255,255,255,0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contenedor::before {
       content: "";
+      background-image: url('https://cdn-icons-png.flaticon.com/512/69/69906.png');
+      background-size: 130px;
+      background-repeat: no-repeat;
+      background-position: center top;
+      opacity: 0.08;
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      top: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
 
-    .banner h1 {
-      font-size: 2.3em;
-      position: relative;
-      z-index: 1;
+    h2 {
       color: #00ffff;
-      text-shadow: 0 0 15px #00ffff;
-      margin: 0 10px;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 25px;
     }
 
     .botones {
-      margin-top: 25px;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      z-index: 1;
-      position: relative;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .botones.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .boton {
-      background: linear-gradient(90deg, #00ffff, #0074D9);
-      color: white;
+      flex: 1;
+      padding: 12px 18px;
       border: none;
-      padding: 12px 32px;
-      font-size: 1.1em;
-      border-radius: 35px;
+      border-radius: 30px;
+      font-size: 16px;
       cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 0 12px rgba(0,255,255,0.7);
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #00aaff, #0066ff);
+      box-shadow: 0 0 15px rgba(0,170,255,0.4);
+      transition: all 0.3s ease;
     }
 
     .boton:hover {
       transform: scale(1.08);
-      background: linear-gradient(90deg, #0074D9, #00ffff);
-      box-shadow: 0 0 25px rgba(0,255,255,1);
+      box-shadow: 0 0 25px rgba(0,255,255,0.7);
     }
 
     footer {
-      background: #001f3f;
-      padding: 20px;
-      margin-top: 40px;
-      color: #ccc;
-      font-size: 0.9em;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
     }
 
     @media (max-width: 600px) {
-      .banner h1 {
-        font-size: 1.7em;
+      .contenedor {
+        padding: 25px;
       }
       .boton {
-        width: 80%;
+        font-size: 15px;
+        padding: 10px 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h2>✈ Futuritas | Promociones Nacionales</h2>
-  </header>
-
-  <section class="banner">
-    <h1>Vuelos Económicos y Futuristas en Colombia 🚀</h1>
-    <div class="botones">
+  <div class="contenedor">
+    <h2>✈ Vuelos Económicos Nacionales</h2>
+    <p>Promociones exclusivas desde <strong>$99.900 COP</strong></p>
+    <div class="botones" id="botones">
       <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
         <button class="boton">✈ Cotizar</button>
       </a>
@@ -117,12 +122,17 @@
         <button class="boton">🛒 Reservar</button>
       </a>
     </div>
-  </section>
+  </div>
 
   <footer>
-    © 2025 Futuritas | Promociones Nacionales ✈  
-    <br> Desarrollado para ofrecer los mejores vuelos del país 🌎
+    © 2025 Vuelos Económicos Colombia | Desarrollado con ✈ pasión
   </footer>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("botones").classList.add("visible");
+    }, 2500);
+  </script>
 
 </body>
 </html>
